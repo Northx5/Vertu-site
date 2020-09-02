@@ -1,0 +1,16 @@
+// Keyframes
+@mixin keyframes($animation-name) {
+  @-webkit-keyframes #{$animation-name} {
+    @content;
+  }
+
+  @keyframes #{$animation-name} {
+    @content;
+  }
+}
+
+// Animation
+@mixin animation($args) {
+  -webkit-animation: #{$args};
+  animation: #{$args};
+}

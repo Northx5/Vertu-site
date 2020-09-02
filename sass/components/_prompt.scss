@@ -1,0 +1,50 @@
+.prompt {
+  grid-column: 1 / -1;
+  background-color: $color-bg;
+
+  &__box {
+    width: 470px;
+    height: 180px;
+    background-color: $color-white;
+    float: right;
+    margin-top: 40px;
+    padding: 20px;
+
+    @media only screen and (max-width: $bp-large) {
+      width: 100%;
+      margin-top: 0;
+      height: auto;
+    }
+
+    &-form {
+      display: flex;
+
+      @media only screen and (max-width: $bp-large) {
+        flex-wrap: wrap;
+        height: 70px;
+        align-items: center;
+      }
+
+      & input {
+        background-color: #eaeaea;
+        border: 0;
+        line-height: 32px;
+        padding: 1px 0 0 15px;
+        border-radius: 5%;
+        margin-right: 8px;
+
+        @media only screen and (max-width: $bp-large) {
+          width: 40%;
+          height: 70%;
+        }
+        @media only screen and (max-width: $bp-small) {
+          width: 38%;          
+        }
+      }
+
+      & button {
+        background-color: $color-dark-blue;
+      }
+    }
+  }
+}

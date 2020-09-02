@@ -1,0 +1,44 @@
+.trims {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(31rem, 1fr));
+  grid-column-gap: 3rem;
+
+  @media only screen and (max-width: $bp-medium) {
+    grid-template-columns: repeat(auto-fit, minmax(19rem, 1fr));
+  }
+
+  &__main {
+    grid-column: 1 / -1;
+    &-img {
+      height: 380px;
+      width: 100%;
+      object-fit: cover;
+      object-position: 100% 70%;
+    }
+  }
+
+  &__choice {    
+    position: relative;
+    
+    @media only screen and (max-width: $bp-large) {
+      font-size: 1.2rem;
+      padding: 15px 0;
+    }
+
+    &-img {
+      width: 100%;
+    }
+
+    &-checkbox {
+      width: 30px;
+      height: 30px;
+      right: 0;
+      bottom: 10%;
+      position: absolute;
+      border: 2px solid #e8e8eb;
+      background: #e8e8eb;
+      border-radius: 4px;
+    }
+  }
+}

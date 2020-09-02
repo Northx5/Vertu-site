@@ -1,0 +1,181 @@
+.tabs {
+  grid-column: 2 / 14;
+  padding: 50px 0 50px 0;
+
+  @media only screen and (max-width: $bp-large) {
+    padding: 20px 0 50px 0;
+  }
+
+  &__container {
+    > button {
+      width: 100%;
+      font-family: inherit;
+      font-size: 100%;
+      margin: 0;
+      outline: 0;
+      border: 0;
+      vertical-align: baseline;
+      box-sizing: border-box;
+      background: transparent;
+    }
+
+    > .tab__button {
+      display: block;
+      margin-top: 1px;
+      background: $color-white;
+      color: $color-secondary;
+      text-align: center;
+      transition: all $transitionSpeed ease-in-out;
+
+      width: 285px;
+      height: 50px;
+      padding: 14px;
+      border: 1px solid $color-secondary;
+      font-weight: normal;
+      font-size: 14px;
+
+      @media only screen and (max-width: $bp-large) {
+        width: 100%;
+      }
+
+      &:nth-child(2) {
+        border-radius: 5px 0 0 5px;
+
+        @media only screen and (max-width: $bp-large) {
+          border-radius: 0;
+        }
+      }
+
+      &:nth-child(11) {
+        border-radius: 0 5px 5px 0;
+        @media only screen and (max-width: $bp-large) {
+          border-radius: 0;
+        }
+      }
+    }
+
+    > input {
+      display: none;
+
+      &:checked + label {
+        & + .tabs__tab {
+          display: block;
+
+          > .tabs__content {
+            @include animation(showTab $transitionSpeed ease-in-out);
+          }
+        }
+      }
+    }
+
+    > .tabs__tab {
+      background: $tabActiveBgColor;
+      display: none;
+    }
+
+    @media screen and (min-width: $bp-largest) {
+      display: flex;
+      flex-wrap: wrap;
+
+      > .tab__button {
+        order: 1;
+        align-items: flex-start;
+        cursor: pointer;
+      }
+
+      > input {
+        &:checked + label {
+          background: $color-secondary;
+          color: $color-white;
+        }
+      }
+
+      > .tabs__tab {
+        order: 2;
+      }
+    }
+  }
+
+  &__content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 25px 0 25px 0;
+    @media only screen and (max-width: $bp-large) {
+      grid-template-columns: 1fr;
+      grid-template-rows: min-content;
+    }
+
+    &-text {
+      align-self: center;
+      @media only screen and (max-width: $bp-large) {
+        grid-column: 1 / 2;
+      }
+    }
+
+    &-img {
+      width: 100%;
+      @media only screen and (max-width: $bp-large) {
+        grid-column: 1 / 2;
+        grid-row: 2 / 3;
+      }
+    }
+
+    &-table {
+      font-size: 1.2rem;
+      width: 99%;
+      font-weight: 500;
+
+      & tr th {
+        padding: 1em;
+      }
+
+      & tr td {
+        text-align: center;
+        padding: 15px 35px;
+        border-top: 1px solid #acacac;
+        border-bottom: 1px solid #acacac;
+        @media only screen and (max-width: $bp-large) {
+          padding: 5px 10px;
+        }
+
+        &:last-child {
+          border-right: 1px solid #acacac;
+        }
+      }
+
+      & td:first-child {
+        background-color: #e5e5e5;
+        border-left: 1px solid #acacac;
+      }
+
+      & tbody tr td:nth-child(2) {
+        border-right: 1px solid #acacac;
+      }
+    }
+
+    &-layouts {
+      grid-column: 1 / -1;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(80rem, 1fr));
+
+      @media only screen and (max-width: $bp-largest) {
+        grid-template-columns: repeat(auto-fit, minmax(35rem, 1fr));
+      }
+
+      @media only screen and (max-width: $bp-large) {
+        grid-template-columns: repeat(auto-fit, minmax(41rem, 1fr));
+      }
+
+      @media only screen and (max-width: $bp-medium) {
+        grid-template-columns: repeat(auto-fit, minmax(33rem, 1fr));
+      }
+
+      &-img {        
+
+        @media only screen and (max-width: $bp-large) {
+          width: 100%;
+        }
+      }
+    }
+  }
+}

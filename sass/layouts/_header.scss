@@ -1,0 +1,112 @@
+.header {
+  grid-column: full-start / full-end;
+  display: grid;
+  grid-template-columns: repeat(14, minmax(10rem, 1fr));
+  grid-template-rows: repeat(6, 1fr);
+
+  &__logo {
+    grid-column: 1 / 4;
+    grid-row: 1 / -1;
+
+    @media only screen and (max-width: $bp-large) {
+      grid-column: 1 / 3;
+      border-right: none;
+    }
+
+    border-right: 1px solid #efefef;
+
+    &-img {
+      width: 222px;
+      height: 57px;
+      margin: 21px 0 0 33px;
+
+      @media only screen and (max-width: $bp-large) {
+        width: 100%;
+        height: auto;
+        margin: 21px 0 0 21px;
+      }
+    }
+  }
+
+  &__top {
+    grid-column: 4 / -1;
+    grid-row: 1 / 3;
+    justify-self: end;
+    display: flex;
+    font-size: 1.3rem;
+
+    @media only screen and (max-width: $bp-large) {
+      display: none;
+    }
+
+    &-group,
+    &-link {
+      align-self: center;
+    }
+
+    &-letter {
+      border: 1px solid #dfdfdf;
+      padding: 1px 3px;
+      color: #323180;
+      font-weight: 600;
+    }
+    &-link {
+      padding-right: 35px;
+      & a {
+        color: $color-primary;
+      }
+    }
+    &-call {
+      background-color: #00a863;
+      color: $color-white;
+      padding-top: 7px;
+      & i {
+        padding: 0 10px;
+      }
+    }
+    &-group {
+      padding-right: 4rem;
+      & span:first-child {
+        padding-right: 6px;
+      }
+      &-alt {
+        background-color: #000;
+        color: #d5eb68 !important;
+      }
+    }
+  }
+
+  &__menu {
+    grid-column: 4 / -1;
+    grid-row: 3 / -1;
+    align-self: center;
+    border-top: 1px solid #efefef;
+    padding-top: 15px;
+    padding-right: 60px;
+
+    @media only screen and (max-width: $bp-large) {
+      display: none;
+    }
+    &-list {
+      display: flex;
+      justify-content: flex-end;
+      font-weight: 500;
+
+      & li a {
+        color: $color-primary;
+      }
+
+      & li:not(:last-child) {
+        padding-right: 120px;
+      }
+    }
+  }
+}
+
+.fa-info-circle::before {
+  content: "\f05a";
+}
+
+.fa-phone-alt::before {
+  content: "\f095";
+}

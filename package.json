@@ -1,0 +1,14 @@
+{
+  "name": "vertu-dev-task",
+  "version": "1.0.0",
+  "description": "Vertu Dev Task",
+  "main": "index.js",
+  "scripts": {
+    "compile:sass": "node-sass sass/main.scss css/style.css -w"
+  },
+  "author": "Nevzat Gunay",
+  "license": "ISC",
+  "devDependencies": {
+    "node-sass": "^4.13.1"
+  }
+}
